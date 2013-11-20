@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#CCC;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#333;
+}
+
+.container{
+	background-color:#FFF;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	box-shadow: 3px 3px 5px #666;
+	padding:20px;
+	float:left;
+	margin:20px;
+}
+h1{
+	color:#600;
+	font-size:20px;
+	text-shadow: 2px 2px 3px #999;
+}
+.console{
+	background-color:#333;
+	padding:10px;
+	color:#CCC;
+	border-radius:2px;
+	border: 2px solid #900;
+}
+ul{
+	padding:5px;
+	margin:3px;
+	list-style:square;
+}
+button{
+	background-color:#900;
+	color:#EFEFEF;
+	border: 1px solid #F00;
+	border-radius:10px;
+	padding:5px;
+	font-weight:bold;
+	cursor:pointer;
+}
+button:hover{
+	background-color:#F00;
+	color:#FFF;
+	border: 1px solid #FFF;
+	box-shadow:0 0 5px #300;
+}
