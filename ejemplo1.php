@@ -9,10 +9,7 @@
 </head>
 
 <body>
-<div ng-controller="Example1"  class="container">
-<h1>Controller in Module</h1>
-<ul><li ng-repeat="person in people | filter:searchWord"> {{person.name}} : {{person.age}}</li></ul>
-</div>
+
 <div class="container">
   <h1>Data Binding</h1>
   <label>Message: </label>
@@ -36,6 +33,19 @@
     <div class="console">{{CtrlResult}}&nbsp;</div>
   </div>
 </div>
+<div ng-controller="Example1"  class="container">
+  <h1>Controller Example1 in Module</h1>
+  <ul>
+    <li ng-repeat="person in people | filter:searchWord"> {{person.name}} : {{person.age}}</li>
+  </ul>
+  <div ng-controller="Example2">
+  <h1>Controller Example2 in Module</h1>
+  name1 : {{name1}}
+  <ul>
+    <li ng-repeat="person in people | filter:searchWord"> {{person.name}} : {{person.age}}</li>
+  </ul>
+  </div>
+</div>
 <div class="container">
   <h1>ng-show & ng-hide</h1>
   <div>
@@ -55,40 +65,38 @@
   </div>
   <ul>
     <li ng-repeat="person in people | filter:searchWord"> {{person.name}} : {{person.age}}
-    <button ng-click="remove($index)">x</button>
-    <span ng-show="$first">First!</span>
-    <span ng-show="$middle">Middle!</span>
-    <span ng-show="$last">Last!</span>
-    </li>
+      <button ng-click="remove($index)">x</button>
+      <span ng-show="$first">First!</span> <span ng-show="$middle">Middle!</span> <span ng-show="$last">Last!</span> </li>
   </ul>
   <div class="console">There are {{people.length}} people in the list.</div>
   <hr>
   <div>
-  
-  <label>Name: </label>
-  <input type="text" ng-model="new_name" placeholder="Enter your name">
-  <label>Age: </label>
-  <input type="number" ng-model="new_age" placeholder="Enter an age">
-  <button ng-click="add()">Add</button>
+    <label>Name: </label>
+    <input type="text" ng-model="new_name" placeholder="Enter your name">
+    <label>Age: </label>
+    <input type="number" ng-model="new_age" placeholder="Enter an age">
+    <button ng-click="add($event)" id="addingButton">Add</button>
   </div>
 </div>
 <div class="container" ng-controller="ngChangeDiv">
-<h1>ng-change & ng-options</h1>
-<input type="text" ng-change="clean()" ng-model="url">
-<hr>
-<div class="console">{{url}}&nbsp;</div>
-<hr>
-<div><input type="search" ng-model="searchWord"></div>
-<select ng-model="selected_person" ng-options="person.name for person in people | filter:searchWord">
-<option value="">Select a person</option>
-</select>
-<h3>{{selected_person.name}}&nbsp;{{selected_person.number}}</h3>
-<div>
-<label>Name: </label>
-  <input type="text" ng-model="selected_person.name" placeholder="Enter your name">
-  <label>Number: </label>
-  <input type="text" ng-model="selected_person.number" placeholder="Enter an number">
-</div>
+  <h1>ng-change & ng-options</h1>
+  <input type="text" ng-change="clean()" ng-model="url">
+  <hr>
+  <div class="console">http://{{url}}&nbsp;</div>
+  <hr>
+  <div>
+    <input type="search" ng-model="searchWord">
+  </div>
+  <select ng-model="selected_person" ng-options="person.name for person in people | filter:searchWord">
+    <option value="">Select a person</option>
+  </select>
+  <h3>{{selected_person.name}}&nbsp;{{selected_person.number}}</h3>
+  <div>
+    <label>Name: </label>
+    <input type="text" ng-model="selected_person.name" placeholder="Enter your name">
+    <label>Number: </label>
+    <input type="text" ng-model="selected_person.number" placeholder="Enter an number">
+  </div>
 </div>
 <script src="js/app/ejemplo1.js"></script>
 </body>
